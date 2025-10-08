@@ -42,10 +42,13 @@ This project aims to predict airline passenger load factors based on route chara
         - UniqueCarrierName
         - CarrierGroup
         - OriginAirportID
+        - Origin
         - OriginCityName
+        - OriginStatesFips 
         - DestAirportID
         - Dest
         - DestCityName
+        - DestStateFips
         - AircraftType
         - AircraftConfig
         - Year
@@ -73,7 +76,7 @@ project-root/
 │   └── flight_data.csv
 │   └── passenger_load_data.csv
 ├── notebooks/
-│   └── 1_eda_and_cleaning.ipynb
+│   └── 1_eda_cleaning_featureengineering.ipynb
 │   └── 2_pax_load_factor_prediction.ipynb
 ├── README.md
 ├── requirements.txt
@@ -108,7 +111,7 @@ project-root/
 
 
 - The model can be adapted to alternative or extended feature sets. To use different predictors, update the preprocessing pipeline and feature selection steps accordingly
-- Aircraft type and configuration information were mapped using the provided reference files
+- Aircraft type, configuration information and route type were mapped using the provided reference files
 
 
 
