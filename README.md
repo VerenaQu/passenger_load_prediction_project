@@ -3,12 +3,12 @@ This project aims to predict airline passenger load factors based on route chara
 
 
 # Table of Contents
-1. Project Goals
-2. Data
-3. Requirements
-4. Project Structure
-5. How to run
-6. Notes
+1. [Project Goals](#project-goals)
+2. [Data](#data)
+3. [Requirements](#requirements)
+4. [Project Structure](#project-structure)
+5. [How to Run](#how-to-run)
+6. [Notes](#notes)
 
 
 # Project Goals
@@ -17,13 +17,14 @@ This project aims to predict airline passenger load factors based on route chara
 - Evaluate model performance under two conditions:
     - Existing routes (known patterns)
     - New routes (previously unseen routes)
-- Perform hyperparameter tuning to explore model robustness and evaluate trade-offs between complexity and performance.
-- Derive insights to support decision-making in airline route planning and capacity optimization
+- Perform hyperparameter tuning to explore model robustness and evaluate trade-offs between complexity and performance
+- Derive insights to support decision-making in airline route planning and capacity optimization 
+
 
 
 # Data
 - The data used for the analysis has been downloaded from US Bureau of Transportation Statistics: "Air Carriers : T-100 Domestic Segment (All Carriers)", https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=GEE&QO_fu146_anzr=Nv4%20Pn44vr45
-- Filters set:
+- Filters applied:
     - Geography: All
     - Filter Year: 2024
     - Filter Period: All Month
@@ -73,6 +74,7 @@ project-root/
 ├── data/
 │   └── aircraft_type_mapping.csv
 │   └── config_mapping.csv
+│   └── fips_codes.csv
 │   └── flight_data.csv
 │   └── passenger_load_data.csv
 ├── notebooks/
@@ -85,9 +87,13 @@ project-root/
 
 
 # How to Run
-- Download the "Air Carriers: T-100 Domestic Segment (All Carriers)" dataset (or use provided sample)
-- Open notebooks in JupyterLab or VS Code
-- Run all cells step-by-step to reproduce the results
+1. **Download the dataset**  
+   Download the *Air Carriers: T-100 Domestic Segment (All Carriers)* dataset or use the provided file
+2. **Open the notebooks** 
+    - Notebook **1_eda_cleaning_featureengineering.ipynb**: performs data exploration, cleaning and feature engineering. Outputs a prepared dataset for modeling
+    - Notebook **2_pax_load_factor_prediction.ipynb**: Loads the cleaned dataset, trains and evaluates predictive models and presents the final results 
+3. **Execute all cells step-by-step**  
+   Run the cells in order to reproduce the full workflow and results
 
 
 
@@ -99,15 +105,20 @@ project-root/
 
     | Column                   | Type          | Description |
     | -------------            | ------------- | -------------
-    | `carrier_group`.         | categorical   | Airline group
+    | `carrier_group`          | categorical   | Airline group
     | `aircraft_type`          | categorical   | Aircraft model
     | `departures_performed`   | numeric       | Number of flights performed
-    | `payload`                | numeric       | Total payload weight (kg)
-    | `freight`                | numeric       | Freight load (kg)
-    | `mail`                   | numeric       | Mail load (kg)
-    | `distance`               | numeric       | Flight distance (km)
-    | `air_time`               | numeric       | Average flight duration (minutes)
+    | `payload`                | numeric       | Total payload weight
+    | `freight`                | numeric       | Freight load 
+    | `mail`                   | numeric       | Mail load 
+    | `distance`               | numeric       | Flight distance 
+    | `air_time`               | numeric       | Average flight duration 
     | `pax_load_factor`        | numeric       | Target variable (percentage of seat occupancy)
+    | `aircraft_type`          | categorical   | Aircraft model code or category (e.g. A320, B737)
+    | `aircraft_config`        | categorical   | Configuration code describing aircraft setup (e.g. passenger, cargo, mixed)
+    | `route`                  | categorical   | Origin–destination pair (e.g. “LAX–SFO”)
+    | `route_type`             | categorical   | Indicates whether the route is Domestic, International/Unknown
+
 
 
 - The model can be adapted to alternative or extended feature sets. To use different predictors, update the preprocessing pipeline and feature selection steps accordingly
@@ -125,7 +136,7 @@ project-root/
 
 - Both RandomizedSearchCV and GridSearchCV were applied for hyperparameter tuning of the best performing model
 - SHAP (SHapley Additive exPlanations) was used to analyze feature importance and interpret model predictions
-- Model evaluation included cross-validation, R², MAE, and RMSE metrics
+- Model evaluation included cross-validation, R², MAE and RMSE metrics
 - Route-based evaluation was performed using GroupShuffleSplit and GroupKFold to simulate predictions on unseen routes
 - All experiments were conducted using scikit-learn pipelines to ensure reproducibility and clean preprocessing integration
 
