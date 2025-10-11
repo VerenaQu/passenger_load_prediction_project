@@ -23,6 +23,7 @@ This project aims to predict airline passenger load factors based on route chara
 
 
 # Data
+- Data file: flight_data.csv
 - The data used for the analysis has been downloaded from US Bureau of Transportation Statistics: "Air Carriers : T-100 Domestic Segment (All Carriers)", https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=GEE&QO_fu146_anzr=Nv4%20Pn44vr45
 - Filters applied:
     - Geography: All
@@ -122,7 +123,10 @@ project-root/
 
 
 - The model can be adapted to alternative or extended feature sets. To use different predictors, update the preprocessing pipeline and feature selection steps accordingly
-- Aircraft type, configuration information and route type were mapped using the provided reference files
+- Aircraft type, configuration information and route type were mapped using the provided reference files:
+    - aircraft_type_mapping.csv
+    - config_mapping.csv
+    - fips_codes.csv
 
 
 
@@ -135,8 +139,8 @@ project-root/
     - Gradient Boosting 
 
 - Both RandomizedSearchCV and GridSearchCV were applied for hyperparameter tuning of the best performing model
-- SHAP (SHapley Additive exPlanations) was used to analyze feature importance and interpret model predictions
+- SHAP (SHapley Additive exPlanations) or coefficient analysis was used to analyze feature importance and interpret model predictions
 - Model evaluation included cross-validation, R², MAE and RMSE metrics
-- Route-based evaluation was performed using GroupShuffleSplit and GroupKFold to simulate predictions on unseen routes
+- New Route evaluation was performed using GroupShuffleSplit and GroupKFold to simulate predictions on unseen routes
 - All experiments were conducted using scikit-learn pipelines to ensure reproducibility and clean preprocessing integration
 
