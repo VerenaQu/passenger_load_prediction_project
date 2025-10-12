@@ -15,8 +15,8 @@ This project aims to predict airline passenger load factors based on route chara
 - Analyze historical flight and route data to understand key factors influencing passenger load factors
 - Develop and benchmark multiple regression models to predict load factors
 - Evaluate model performance under two conditions:
-    - Existing routes (known patterns)
-    - New routes (previously unseen routes)
+    - Existing routes (known patterns) - Standard random split where routes may appear in both training and test data; used as a baseline
+    - New routes (previously unseen routes) - A route-based split ensures no overlap between training and test routes, simulating the real-world case of predicting load factors for new airline connections
 - Perform hyperparameter tuning to explore model robustness and evaluate trade-offs between complexity and performance
 - Derive insights to support decision-making in airline route planning and capacity optimization 
 
@@ -78,6 +78,8 @@ project-root/
 │   └── fips_codes.csv
 │   └── flight_data.csv
 │   └── passenger_load_data.csv
+├── model
+│   └── passenger_load_model.joblib
 ├── notebooks/
 │   └── 1_eda_cleaning_featureengineering.ipynb
 │   └── 2_pax_load_factor_prediction.ipynb
@@ -95,6 +97,14 @@ project-root/
     - Notebook **2_pax_load_factor_prediction.ipynb**: Loads the cleaned dataset, trains and evaluates predictive models and presents the final results 
 3. **Execute all cells step-by-step**  
    Run the cells in order to reproduce the full workflow and results
+
+❗ **This repo ships with two ready-to-use artifacts:**
+- data/passenger_load_data.csv – the cleaned dataset produced by Notebook 1_eda_cleaning_featureengineering.ipynb
+- model/passenger_load_model.joblib – the trained pipeline (preprocessing + model) from Notebook 2_pax_load_factor_prediction.ipynb
+
+You have two ways to run Notebook 2_pax_load_factor_prediction.ipynb:
+- Use existing artifacts (no retraining)
+- Reproduce training and overwrite artifacts
 
 
 
