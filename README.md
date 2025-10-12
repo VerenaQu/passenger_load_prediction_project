@@ -26,9 +26,9 @@ This project aims to predict airline passenger load factors based on route chara
 - Data file: flight_data.csv
 - The data used for the analysis has been downloaded from US Bureau of Transportation Statistics: "Air Carriers : T-100 Domestic Segment (All Carriers)", https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=GEE&QO_fu146_anzr=Nv4%20Pn44vr45
 - Filters applied:
-    - Geography: All
+    - Filter Geography: All
     - Filter Year: 2024
-    - Filter Period: All Month
+    - Filter Period: All Months
     - Field Names:
         - DepScheduled
         - DepPerformed
@@ -75,7 +75,7 @@ project-root/
 ├── data/
 │   └── aircraft_type_mapping.csv
 │   └── config_mapping.csv
-│   └── fips_codes.csv
+│   └── fips_codes_mapping.csv
 │   └── flight_data.csv
 │   └── passenger_load_data.csv
 ├── model
@@ -136,7 +136,7 @@ You have two ways to run Notebook 2_pax_load_factor_prediction.ipynb:
 - Aircraft type, configuration information and route type were mapped using the provided reference files:
     - aircraft_type_mapping.csv
     - config_mapping.csv
-    - fips_codes.csv
+    - fips_codes_mapping.csv
 
 
 
