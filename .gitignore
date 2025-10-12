@@ -1,2 +1,4 @@
 # Environments 
 .venv/
+# Data files
+model/passenger_load_model.joblib
