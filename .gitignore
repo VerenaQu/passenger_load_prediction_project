@@ -1,4 +1,12 @@
 # Environments 
 .venv/
-# Data files
-model/passenger_load_model.joblib
+
+# Model files (too large for GitHub)
+model/
+*.joblib
+data/*.joblib
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
