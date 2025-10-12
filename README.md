@@ -78,8 +78,7 @@ project-root/
 │   └── fips_codes_mapping.csv
 │   └── flight_data.csv
 │   └── passenger_load_data.csv
-├── model
-│   └── passenger_load_model.joblib
+├── model/                              # directory created automatically when saving trained model
 ├── notebooks/
 │   └── 1_eda_cleaning_featureengineering.ipynb
 │   └── 2_pax_load_factor_prediction.ipynb
@@ -98,13 +97,11 @@ project-root/
 3. **Execute all cells step-by-step**  
    Run the cells in order to reproduce the full workflow and results
 
-❗ **This repo ships with two ready-to-use artifacts:**
-- data/passenger_load_data.csv – the cleaned dataset produced by Notebook 1_eda_cleaning_featureengineering.ipynb
-- model/passenger_load_model.joblib – the trained pipeline (preprocessing + model) from Notebook 2_pax_load_factor_prediction.ipynb
+❗ **This repo ships with the cleaned dataset (`data/passenger_load_data.csv`) produced by Notebook 1_eda_cleaning_featureengineering.ipynb**
 
-You have two ways to run Notebook 2_pax_load_factor_prediction.ipynb:
-- Use existing artifacts (no retraining)
-- Reproduce training and overwrite artifacts
+❗ **The trained model (`passenger_load_model.joblib`) is not included due to GitHub file size limits. You can easily regenerate it by running Notebook 2_pax_load_factor_prediction.ipynb, which automatically exports the model after training.**
+
+
 
 
 
