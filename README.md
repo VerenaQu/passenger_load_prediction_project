@@ -78,7 +78,7 @@ project-root/
 │   └── fips_codes_mapping.csv
 │   └── flight_data.csv
 │   └── passenger_load_data.csv
-├── model/                              # directory created automatically when saving trained model
+├── model/                              # directory created autom. when saving trained model
 ├── notebooks/
 │   └── 1_eda_cleaning_featureengineering.ipynb
 │   └── 2_pax_load_factor_prediction.ipynb
