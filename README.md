@@ -163,7 +163,7 @@ project-root/
     - Random Forest
     - Gradient Boosting 
 
-- Both RandomizedSearchCV and GridSearchCV were applied for hyperparameter tuning of the best performing model
+- Hyperparameter tuning was performed using RandomizedSearchCV and GridSearchCV for models with tunable parameters. Models without relevant hyperparameters, such as the linear regression and baseline models, were excluded from this step
 - SHAP (SHapley Additive exPlanations) or coefficient analysis was used to analyze feature importance and interpret model predictions
 - Model evaluation included cross-validation, R², MAE and RMSE metrics
 - New Route evaluation was performed using GroupShuffleSplit and GroupKFold to simulate predictions on unseen routes
