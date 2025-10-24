@@ -8,7 +8,7 @@ This project aims to predict airline passenger load factors based on route chara
 # Table of Contents
 1. [Project Goals](#project-goals)
 2. [Data](#data)
-3. [Getting started - Requirements](#getting-started---requirements)
+3. [Getting started & Requirements](#getting-started--requirements)
 4. [Project Structure](#project-structure)
 5. [How to Run](#how-to-run)
 6. [Notes](#notes)
