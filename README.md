@@ -1,4 +1,4 @@
-# Project: Passenger Load Prediction Project
+# Passenger Load Prediction Project
 This project aims to predict airline passenger load factors based on route characteristics and operational data. Using machine learning techniques such as regression models, cross-validation and hyperparameter optimization, the project identifies patterns that influence route occupancy and evaluates model performance for both existing and new routes.
 
 <img src="./image.png" alt="Passenger Load Factor Distribution" width="300">
