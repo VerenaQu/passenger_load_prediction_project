@@ -1,14 +1,18 @@
 # Project: Passenger Load Prediction Project
 This project aims to predict airline passenger load factors based on route characteristics and operational data. Using machine learning techniques such as regression models, cross-validation and hyperparameter optimization, the project identifies patterns that influence route occupancy and evaluates model performance for both existing and new routes.
 
+<img src="./image.png" alt="Passenger Load Factor Distribution" width="300">
+<br><br>
+
 
 # Table of Contents
 1. [Project Goals](#project-goals)
 2. [Data](#data)
-3. [Requirements](#requirements)
+3. [Getting started - Requirements](#getting-started---requirements)
 4. [Project Structure](#project-structure)
 5. [How to Run](#how-to-run)
 6. [Notes](#notes)
+<br><br>
 
 
 # Project Goals
@@ -19,7 +23,7 @@ This project aims to predict airline passenger load factors based on route chara
     - New routes (previously unseen routes) - A route-based split ensures no overlap between training and test routes, simulating the real-world case of predicting load factors for new airline connections
 - Perform hyperparameter tuning to explore model robustness and evaluate trade-offs between complexity and performance
 - Derive insights to support decision-making in airline route planning and capacity optimization 
-
+<br><br>
 
 
 # Data
@@ -55,9 +59,16 @@ This project aims to predict airline passenger load factors based on route chara
         - AircraftConfig
         - Year
         - Month
+<br><br>
 
+# Getting started & Requirements
 
-# Requirements
+It is recommended to use a virtual environment:<br>
+python -m venv .venv <br>
+source .venv/bin/activate - on Mac/Linux<br>
+or<br>
+.venv\Scripts\activate - on Windows
+
 You should have installed Python along with the following libraries:
 - pandas
 - numpy
@@ -65,9 +76,11 @@ You should have installed Python along with the following libraries:
 - seaborn
 - scikit-learn
 - scipy
-<br>
-For detailed version specifications, please refer to the requirements.txt file.
 
+For detailed version specifications, please refer to the requirements.txt file.
+<br>
+You can install all dependencies using your preferred environment manager (e.g. pip, conda or uv).
+<br><br>
 
 # Project structure
 ```
@@ -82,10 +95,15 @@ project-root/
 ├── notebooks/
 │   └── 1_eda_cleaning_featureengineering.ipynb
 │   └── 2_pax_load_factor_prediction.ipynb
-├── README.md
-├── requirements.txt
+├── .gitignore
+├── .python-version
+├── image.png                           # visualization for README
+├── main.py                             # main script for model execution or prediction
+├── pyproject.toml                      # project configuration
+├── README.md                                   
+├── requirements.txt                    # dependencies
 ```
-
+<br><br>
 
 
 # How to Run
@@ -100,7 +118,7 @@ project-root/
 ❗ **This repo ships with the cleaned dataset (`data/passenger_load_data.csv`) produced by Notebook 1_eda_cleaning_featureengineering.ipynb**
 
 ❗ **The trained model (`passenger_load_model.joblib`) is not included due to GitHub file size limits. You can easily regenerate it by running Notebook 2_pax_load_factor_prediction.ipynb, which automatically exports the model after training.**
-
+<br><br>
 
 
 
